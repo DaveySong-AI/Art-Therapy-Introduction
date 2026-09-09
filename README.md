@@ -44,4 +44,15 @@ python3 src/verify_output.py
 
 建议先对这四幕进行人工视觉审核，再扩展到完整 60 秒 Episode 00。
 
+## Scene 01 Gold Master prototype
+
+`assets/approved/episode-00/scene-01-gold-master.png` 是 Scene 01 的唯一视觉母版。`src/render_scene01_gold.py` 只从该文件派生浅色边缘底稿、逐笔遮罩与移动蓝色马克笔手；它不会重绘、替代或简化角色和物件。
+
+```bash
+python3 src/render_scene01_gold.py --format all
+python3 src/verify_scene01_gold.py
+```
+
+渲染会输出 `output/scene-01-gold-prototype-landscape.mp4`（1920×1080）和 `output/scene-01-gold-prototype-portrait.mp4`（1080×1920）。两者均为 4 秒、30fps H.264/AAC。竖版保留完整人物和批准画面，并以母版派生的柔焦背景重新构图，绝不拉伸人物或用新插画填充画面。
+
 — Davey's Codex agent
