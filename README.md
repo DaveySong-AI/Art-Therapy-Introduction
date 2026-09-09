@@ -11,8 +11,37 @@
 
 ## 当前阶段
 
-这不是已经可以自动生成完整视频的闭环 Skill，而是“可复用的制作规范 + Episode 00 原型计划”。下一阶段应补充可运行的视频管线、依赖安装说明、渲染命令、素材模板和自动验收步骤，再将它升级为真正可重复执行的 Skill。
+V1 已提供可重复运行的 Episode 00 四场景原型管线。它使用 Python + Pillow 绘制逐笔出现的原创矢量风格画面，再由 FFmpeg 封装为 H.264/AAC MP4；不裁切或移动现有的分镜图作为成片。
 
-建议先制作 Scene 01、06、10、12 的 15–20 秒原型，经过人工视觉审核后再扩展到完整 60 秒 Episode 00。
+## V1 原型
+
+对应的源规格保存在 `episodes/episode-00/`，可编辑渲染代码在 `src/render_prototype.py`。当前只制作 Scene 01、06、10、12，合计 18 秒，不是完整 60 秒成片。
+
+### 前置条件
+
+- Python 3.9+ 和 Pillow（本机可通过 `python3 -m pip install -r requirements.txt` 安装）
+- FFmpeg / FFprobe
+- macOS 的 Hiragino Sans GB（脚本使用其中文字符支持）
+
+### 渲染
+
+```bash
+python3 src/render_prototype.py --format landscape
+python3 src/render_prototype.py --format portrait
+python3 src/verify_output.py
+```
+
+输出文件：
+
+- `output/episode-00-prototype-landscape.mp4` — 1920×1080，30 fps
+- `output/episode-00-prototype-portrait.mp4` — 1080×1920，30 fps
+
+渲染中间帧位于 `output/frames/`，每次渲染会自动重建。成片包含静音 AAC 轨道，为后续接入温暖普通话旁白、授权 BGM 与少量笔触音效预留接口。文案明确表达的是情绪觉察、表达和短暂舒缓，不作诊断或治疗承诺。
+
+### 验收范围
+
+自动检查确认两个成片的时长、帧率、尺寸与 H.264/AAC 编码。人工审核仍需确认：角色与参考分镜的一致性、逐笔出现的自然程度、中文可读性、竖屏安全区，以及未来加入旁白和音乐后的情绪节奏。
+
+建议先对这四幕进行人工视觉审核，再扩展到完整 60 秒 Episode 00。
 
 — Davey's Codex agent

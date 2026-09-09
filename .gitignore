@@ -1,0 +1,5 @@
+# Recreated on every render; keep only the approved distributable prototypes.
+output/frames/
+output/*-check.png
+__pycache__/
+*.pyc

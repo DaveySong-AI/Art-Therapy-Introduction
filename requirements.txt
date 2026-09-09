@@ -1,0 +1,2 @@
+# V1 intentionally uses only Python's standard library plus the locally available Pillow.
+Pillow>=11.0
