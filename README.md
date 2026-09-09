@@ -66,4 +66,15 @@ python3 src/verify_scene01_selective_v3.py
 
 输出为 `output/scene-01-selective-whiteboard-v3.mp4`（1920×1080、30fps、约 5.8 秒）。
 
+## Scene 01 natural-animation V4
+
+V4 不再模拟手绘过程。它保留 V3 的静态底图，但让故事重点以轻微的位移、缩放和自然停留依次出现，不显示 marker 手或笔触遮罩。
+
+```bash
+python3 src/render_scene01_natural_v4.py
+python3 src/verify_scene01_natural_v4.py
+```
+
+输出为 `output/scene-01-natural-animation-v4.mp4`（1920×1080、30fps、约 5.8 秒）。
+
 — Davey's Codex agent
