@@ -55,4 +55,15 @@ python3 src/verify_scene01_gold.py
 
 渲染会输出 `output/scene-01-gold-prototype-landscape.mp4`（1920×1080）和 `output/scene-01-gold-prototype-portrait.mp4`（1080×1920）。两者均为 4 秒、30fps H.264/AAC。竖版保留完整人物和批准画面，并以母版派生的柔焦背景重新构图，绝不拉伸人物或用新插画填充画面。
 
+## Scene 01 selective whiteboard V3
+
+V3 将 Gold Master 用作静态世界：男孩、书桌、房间与学习环境从第一帧就出现。`assets/derived/episode-00/scene-01-static-base-v3.png` 是从批准母版非破坏性派生的静态底图，仅移除了将被逐笔讲述的压力元素；只有游戏、消息、时间、电量、任务清单和压力乱线按叙事顺序以移动马克笔和遮罩显现。
+
+```bash
+python3 src/render_scene01_selective_v3.py
+python3 src/verify_scene01_selective_v3.py
+```
+
+输出为 `output/scene-01-selective-whiteboard-v3.mp4`（1920×1080、30fps、约 5.8 秒）。
+
 — Davey's Codex agent
