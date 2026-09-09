@@ -1,6 +1,5 @@
-# Recreated on every render; keep only the approved distributable prototypes.
-output/frames/
-output/*-check.png
-output/*-frames/
+# Local/editor residue and generated temporary files.
+.DS_Store
 __pycache__/
 *.pyc
+*.tmp

@@ -1,91 +1,40 @@
-# Art-Therapy-Introduction
+# 艺术疗愈 · 10 节课
 
-《艺术疗愈 · 10 节课》的视频制作工作区。当前从 Episode 00《艺术疗愈是什么？为什么我们需要它？》开始，目标是先验证 Color Cartoon Whiteboard Animation 的视觉和制作流程。
+儿童与青少年艺术表达、情绪觉察与绘画减压微课程。
 
-## 仓库内容
+核心句：**有些情绪说不出来，但可以画出来。**
 
-- [`skills/art-healing-video/SKILL.md`](skills/art-healing-video/SKILL.md)：制作规范、Episode 00 分镜脚本、视觉规则和后续 MVP 计划。
-- [`assets/reference/episode-00-color-storyboard.png`](assets/reference/episode-00-color-storyboard.png)：主要彩色视觉参考。
-- [`assets/reference/episode-00-whiteboard-storyboard.png`](assets/reference/episode-00-whiteboard-storyboard.png)：白板手绘镜头结构参考。
-- [`docs/SKILL_ASSESSMENT.md`](docs/SKILL_ASSESSMENT.md)：对当前 Skill 完整性的判断和下一步闭环建议。
+## 当前内容
 
-## 当前阶段
+Episode 00《艺术疗愈是什么？为什么我们需要它？》已经完成，作为后续课程的统一视觉和叙事参考：
 
-V1 已提供可重复运行的 Episode 00 四场景原型管线。它使用 Python + Pillow 绘制逐笔出现的原创矢量风格画面，再由 FFmpeg 封装为 H.264/AAC MP4；不裁切或移动现有的分镜图作为成片。
+- [最终成片](episodes/episode-00/final/episode-00-whiteboard-animation.mp4)
+- [课程脚本](episodes/episode-00/script.md)
+- [7 镜头分镜表](episodes/episode-00/storyboard.md)
+- [7 张分镜图](episodes/episode-00/storyboard-images/)
+- [制作记录](episodes/episode-00/production-notes.md)
+- [Episode 00 文件说明](episodes/episode-00/README.md)
 
-## V1 原型
+全系列教学边界、受众、课程结构和安全表述统一见 [COURSE_GUIDE.md](COURSE_GUIDE.md)。
 
-对应的源规格保存在 `episodes/episode-00/`，可编辑渲染代码在 `src/render_prototype.py`。当前只制作 Scene 01、06、10、12，合计 18 秒，不是完整 60 秒成片。
+## 后续课程制作依据
 
-### 前置条件
+制作 Episode 01–10 时，按以下优先级执行：
 
-- Python 3.9+ 和 Pillow（本机可通过 `python3 -m pip install -r requirements.txt` 安装）
-- FFmpeg / FFprobe
-- macOS 的 Hiragino Sans GB（脚本使用其中文字符支持）
+1. 以 [COURSE_GUIDE.md](COURSE_GUIDE.md) 确认课程目标、受众、时长和表达边界。
+2. 以 Episode 00 的脚本、分镜、关键帧和成片确认视觉语言、节奏和声音关系。
+3. 使用 [whiteboard-video-maker skill](skills/whiteboard-video-maker/SKILL.md) 的流程、模板和 FFmpeg 规范完成新一集。
+4. 每一集放在 `episodes/episode-XX/`，至少包含 `README.md`、`script.md`、`storyboard.md`、`storyboard-images/` 和 `final/`。
 
-### 渲染
+## 参考资产
 
-```bash
-python3 src/render_prototype.py --format landscape
-python3 src/render_prototype.py --format portrait
-python3 src/verify_output.py
-```
+- [彩色视觉参考](assets/reference/episode-00-color-storyboard.png)
+- [白板镜头结构参考](assets/reference/episode-00-whiteboard-storyboard.png)
+- [全系列制作 Skill](skills/whiteboard-video-maker/)
 
-输出文件：
+## 仓库原则
 
-- `output/episode-00-prototype-landscape.mp4` — 1920×1080，30 fps
-- `output/episode-00-prototype-portrait.mp4` — 1080×1920，30 fps
-
-渲染中间帧位于 `output/frames/`，每次渲染会自动重建。成片包含静音 AAC 轨道，为后续接入温暖普通话旁白、授权 BGM 与少量笔触音效预留接口。文案明确表达的是情绪觉察、表达和短暂舒缓，不作诊断或治疗承诺。
-
-### 验收范围
-
-自动检查确认两个成片的时长、帧率、尺寸与 H.264/AAC 编码。人工审核仍需确认：角色与参考分镜的一致性、逐笔出现的自然程度、中文可读性、竖屏安全区，以及未来加入旁白和音乐后的情绪节奏。
-
-建议先对这四幕进行人工视觉审核，再扩展到完整 60 秒 Episode 00。
-
-## Scene 01 Gold Master prototype
-
-`assets/approved/episode-00/scene-01-gold-master.png` 是 Scene 01 的唯一视觉母版。`src/render_scene01_gold.py` 只从该文件派生浅色边缘底稿、逐笔遮罩与移动蓝色马克笔手；它不会重绘、替代或简化角色和物件。
-
-```bash
-python3 src/render_scene01_gold.py --format all
-python3 src/verify_scene01_gold.py
-```
-
-渲染会输出 `output/scene-01-gold-prototype-landscape.mp4`（1920×1080）和 `output/scene-01-gold-prototype-portrait.mp4`（1080×1920）。两者均为 4 秒、30fps H.264/AAC。竖版保留完整人物和批准画面，并以母版派生的柔焦背景重新构图，绝不拉伸人物或用新插画填充画面。
-
-## Scene 01 selective whiteboard V3
-
-V3 将 Gold Master 用作静态世界：男孩、书桌、房间与学习环境从第一帧就出现。`assets/derived/episode-00/scene-01-static-base-v3.png` 是从批准母版非破坏性派生的静态底图，仅移除了将被逐笔讲述的压力元素；只有游戏、消息、时间、电量、任务清单和压力乱线按叙事顺序以移动马克笔和遮罩显现。
-
-```bash
-python3 src/render_scene01_selective_v3.py
-python3 src/verify_scene01_selective_v3.py
-```
-
-输出为 `output/scene-01-selective-whiteboard-v3.mp4`（1920×1080、30fps、约 5.8 秒）。
-
-## Scene 01 natural-animation V4
-
-V4 不再模拟手绘过程。它保留 V3 的静态底图，但让故事重点以轻微的位移、缩放和自然停留依次出现，不显示 marker 手或笔触遮罩。
-
-```bash
-python3 src/render_scene01_natural_v4.py
-python3 src/verify_scene01_natural_v4.py
-```
-
-输出为 `output/scene-01-natural-animation-v4.mp4`（1920×1080、30fps、约 5.8 秒）。
-
-## Scene 01 natural cartoon explainer V5
-
-V5 是当前审核版本。它采用静态环境、角色微动画和叙事元素动作的三级体系：游戏轻推与倾斜、手机震动与 `99+` 弹出、时钟指针快转、电池下降、任务逐行堆积、无手的压力乱线增长，以及 100%→103% 的缓慢推镜。顶部制作/分镜信息已从观众画面中移除。`output/scene-01-natural-v5-temp-sfx.wav` 是随成片保留的临时低调音效源。
-
-```bash
-python3 src/render_scene01_natural_v5.py
-python3 src/verify_scene01_natural_v5.py
-```
-
-输出为 `output/scene-01-natural-animation-v5.mp4`（1920×1080、30fps、约 5.8 秒，含临时 AAC 音轨）。
-
-— Davey's Codex agent
+- `COURSE_GUIDE.md` 是课程层面的唯一总纲。
+- `episodes/episode-00/` 是已完成成片和后续制作的视觉样板。
+- `skills/whiteboard-video-maker/` 是可复用的制作方法，不在仓库中保留多轮实验脚本。
+- 只保留最终成片、必要分镜和能服务后续制作的参考资料；临时帧、测试输出和废弃版本不入库。

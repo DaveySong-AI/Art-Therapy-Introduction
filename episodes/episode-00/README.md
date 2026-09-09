@@ -11,8 +11,6 @@
 | [storyboard-images/](storyboard-images/) | 7 张分镜关键帧图 |
 | [production-notes.md](production-notes.md) | 制作记录 + 踩坑经验 + 积分消耗分析 |
 | [final/episode-00-whiteboard-animation.mp4](final/episode-00-whiteboard-animation.mp4) | 最终成品视频（60秒，已去水印） |
-| narration-prototype.txt | V1 原型旁白（保留） |
-| prototype.yaml | V1 原型配置（保留） |
 
 ## 视频参数
 
@@ -25,4 +23,4 @@
 
 ## 后续课程参考
 
-制作流程、分镜模板、Prompt 库、FFmpeg 命令统一沉淀在 [`skills/whiteboard-video-maker/`](../../skills/whiteboard-video-maker/)，后续 Episode 01–10 可直接复用。
+课程总纲见 [`COURSE_GUIDE.md`](../../COURSE_GUIDE.md)；制作流程、分镜模板、Prompt 库和 FFmpeg 命令统一沉淀在 [`skills/whiteboard-video-maker/`](../../skills/whiteboard-video-maker/)，后续 Episode 01–10 可直接复用。
