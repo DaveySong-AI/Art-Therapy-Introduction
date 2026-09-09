@@ -1139,81 +1139,7 @@ vs.
 
 ---
 
-# 24. Whiteboard / Animation Language
-
-Episode 00 的制作过程中已经验证：
-
-复杂彩色卡通插画不适合强制全部模拟逐笔 Whiteboard Drawing。
-
-因此后续系列采用混合动画语言：
-
-## Color Cartoon Explainer Animation
-+
-## Selective Hand-Drawn Expression
-
----
-
-# 25. 动画三级系统
-
-## Level 1 — Environment
-
-基本静态。
-
-例如：
-
-- 房间
-- 桌子
-- 家具
-- 教室
-- 自然环境
-
-作用：
-
-建立世界。
-
----
-
-## Level 2 — Character
-
-轻微自然动画。
-
-例如：
-
-- blink
-- eye movement
-- breathing
-- subtle expression
-- small body movement
-
-作用：
-
-让角色有生命感。
-
----
-
-## Level 3 — Story / Art Expression
-
-主要动画资源投入这里。
-
-例如：
-
-- 情绪线条
-- 颜色
-- 乱线
-- 风暴
-- 怪兽
-- 箭头
-- 图标
-- 关键词
-- 艺术创作过程
-
-作用：
-
-讲故事、解释概念、展示练习。
-
----
-
-# 26. Hand-Drawn Elements
+# 24. Hand-Drawn Elements
 
 “手绘”应该具有内容意义。
 
@@ -1249,7 +1175,7 @@ Episode 00 的制作过程中已经验证：
 
 ---
 
-# 27. 每集必须有一个 Hero Visual
+# 25. 每集必须有一个 Hero Visual
 
 每一集只需要一个真正让观众记住的视觉动作。
 
@@ -1299,7 +1225,7 @@ Agent 在设计分镜时，应优先保护这个 Hero Visual。
 
 ---
 
-# 28. 停顿原则
+# 26. 停顿原则
 
 不要让旁白从头说到尾。
 
@@ -1333,7 +1259,7 @@ BGM 可以继续。
 
 ---
 
-# 29. Voice Tone
+# 27. Voice Tone
 
 旁白应该：
 
@@ -1370,7 +1296,7 @@ BGM 可以继续。
 
 ---
 
-# 30. Safety Principles
+# 28. Safety Principles
 
 所有 Agent 在制作脚本时必须遵守：
 
@@ -1415,7 +1341,7 @@ BGM 可以继续。
 
 ---
 
-# 31. Agent Workflow
+# 29. Agent Workflow
 
 任何 Agent 开始制作 Lesson 01–10 之前：
 
@@ -1432,7 +1358,7 @@ BGM 可以继续。
 
 ---
 
-# 32. Episode Production Order
+# 30. Episode Production Order
 
 不要一次生成十集完整视频。
 
@@ -1476,7 +1402,7 @@ BGM 可以继续。
 
 ---
 
-# 33. Success Criteria
+# 31. Success Criteria
 
 本系列成功与否，不应该只用：
 
@@ -1509,7 +1435,7 @@ BGM 可以继续。
 
 ---
 
-# 34. Final North Star
+# 32. Final North Star
 
 所有脚本、分镜、动画、旁白和艺术设计在做决定时，都应该回到一个问题：
 
