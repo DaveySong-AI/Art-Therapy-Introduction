@@ -1,8 +1,0 @@
-title: "艺术疗愈是什么？为什么我们需要它？"
-format: "1920x1080, 30fps, H.264/AAC"
-prototype_duration_seconds: 18
-scenes:
-  - { id: "01", duration: 4, purpose: "逐项绘制压力来源" }
-  - { id: "06", duration: 5, purpose: "将乱线画成彩色表达" }
-  - { id: "10", duration: 6, purpose: "给情绪一个出口，而非医疗承诺" }
-  - { id: "12", duration: 3, purpose: "系列品牌收尾" }
