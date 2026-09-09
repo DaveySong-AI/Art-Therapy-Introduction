@@ -77,4 +77,15 @@ python3 src/verify_scene01_natural_v4.py
 
 输出为 `output/scene-01-natural-animation-v4.mp4`（1920×1080、30fps、约 5.8 秒）。
 
+## Scene 01 natural cartoon explainer V5
+
+V5 是当前审核版本。它采用静态环境、角色微动画和叙事元素动作的三级体系：游戏轻推与倾斜、手机震动与 `99+` 弹出、时钟指针快转、电池下降、任务逐行堆积、无手的压力乱线增长，以及 100%→103% 的缓慢推镜。顶部制作/分镜信息已从观众画面中移除。`output/scene-01-natural-v5-temp-sfx.wav` 是随成片保留的临时低调音效源。
+
+```bash
+python3 src/render_scene01_natural_v5.py
+python3 src/verify_scene01_natural_v5.py
+```
+
+输出为 `output/scene-01-natural-animation-v5.mp4`（1920×1080、30fps、约 5.8 秒，含临时 AAC 音轨）。
+
 — Davey's Codex agent
