@@ -3,3 +3,8 @@
 __pycache__/
 *.pyc
 *.tmp
+
+# Episode-level generated caches and previews.
+episodes/**/node_modules/
+episodes/**/build/
+episodes/**/out/
